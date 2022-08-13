@@ -1,0 +1,286 @@
+#include<stdio.h>
+#include<string.h>
+
+struct charset
+{
+    int i ;
+    char c ;
+};
+void setva(int *i , char * c)
+{
+    scanf("%d %c" , i , c);
+}
+int main(){
+    struct charset o;
+    setva(&o.i ,&o.c);
+    printf("%d%c" ,o.i,o.c);
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<stdio.h>
+#include<string.h>
+
+struct power
+{
+    int i ;
+    char c ;
+};
+void print(struct power *ooo)
+{
+    printf("%d %c" , ooo->i ,ooo->c);
+}
+int main(){
+struct power o = {12,'3'};
+    print(&o);
+}
+
+
+
+
+
+
+#include<stdio.h>
+#include<string.h>
+
+struct power
+{
+    int i ;
+   
+};
+void print(struct power *ooo)
+{
+    //ooo->i++;
+    printf("%d %c\n" , ooo->i );
+}
+struct power edit(struct power l)
+{
+    l.i++;
+ 
+}
+int main(){
+struct power o = {12};
+struct power p= {1223};
+o = edit(o) ;
+p = edit(p) ;
+    print(&p);
+}
+
+
+
+
+
+
+
+
+#include<stdio.h>
+#include<string.h>
+
+struct power
+{
+    int x ;
+int y ;
+};
+void print(struct power p[])
+{
+    for (int i =0;i<2;i++)
+    {
+        printf("%d %d\n" ,p[i].x , p[i].y);
+    }
+}
+int main()
+{
+    struct power p[2]={{1,2},{3,4}};
+   print(p);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<stdio.h>
+#include<string.h>
+
+struct power
+{
+    int x ;
+int y ;
+};
+struct power edit(struct power p)
+{
+    p.x++;
+    p.y--;
+    return p;
+
+};
+
+
+void print(struct power *p)
+{
+    printf("%d %d\n" , p->x , p->y);
+}
+int main()
+{
+    struct power p;
+    p.x = 11;
+    p.y = 22;
+  p =   edit(p);
+    print(&p);
+
+    struct power u ;
+    u.x =100 ;
+    u.y = 101;
+   u =  edit(u);
+    print(&u);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+int check_len(char *str1)
+{
+    int count = 0 ;
+   for(int  i = 0 ; str1[i]!='\0' ; i++)
+   {
+       count++;
+   }
+   return count ;
+}
+
+int substring(char * str1 , char * str2)
+{
+    int len1 = check_len(str1);
+    int len2 = check_len(str2);
+    
+    for (int i=0; i<len1 ; i++)
+    {
+        int j ;
+        for (j =0 ; j<len2 ; j++)
+        {
+            if( str1[i+j] != str2[j])
+            {
+                break; 
+            }
+            
+        }
+        if (len2==j)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+int main()
+{
+    char str1[100] = "s_high";
+    char str2[] ="high";
+
+ 
+ if(substring(str1 ,str2))
+ {
+     printf("%s is substring of %s ", str2, str1);
+ }
+ else 
+ {
+      printf("%s is not a substring of %s ", str1, str2);
+ }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
