@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+struct node  {               int x  ;
+                struct node *link;
+                };
+
+
+
+void count_noof_nodes(struct node *head)
+{
+    int count = 0;
+    struct node *ptr = NULL;
+  ptr  = head ;
+    while(ptr!=NULL)
+    {
+        printf("%d ",ptr->x );
+        count++;
+        ptr=ptr->link;
+        
+    }
+    printf("\n");
+    printf("count number :%d \n" , count);
+}
+
+struct node * add_at_beg(struct node *head ,int data )
+{
+     struct node * frr = malloc(sizeof(struct node));
+    frr->x= data;
+    frr->link = head;
+    head = frr;
+    return head;
+}
+
+int main()
+{
+ struct node * head = NULL ;
+ head = malloc( sizeof(struct node ));
+ head->x = 1;
+ head->link = NULL ;
+
+struct node * current = NULL ;
+current = malloc( sizeof(struct node ));
+ current->x = 200;
+ current->link = NULL ;
+ head->link = current;
+
+
+
+struct node * current2 = NULL ;
+current2 = malloc( sizeof(struct node ));
+ current2->x = 3;
+ current2->link = NULL ;
+ current->link = current2;
+//printf("%d \n" , head->link->link->x);
+
+
+
+struct node * current3 = NULL ;
+current3 = malloc( sizeof(struct node ));
+ current3->x = 4;
+ current3->link = NULL ;
+ current2->link = current3;
+//printf("current %d \n" , head->link->link->link->x);
+//printf("\n\n");
+
+
+head = add_at_beg(head , 1111);
+count_noof_nodes( head);
+   }
+
